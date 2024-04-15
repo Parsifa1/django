@@ -34,11 +34,11 @@ class UserInfoView(APIView):
                 'user_id':request.user.id,
                 'is_superuser': request.user.is_superuser
             }
-            opcations_models.OptionLog.objects.create(
-                op_user=user_obj,
-                op_name='登录',
-                ext={'file_name': ''}
-            )
+            # opcations_models.OptionLog.objects.create(
+            #     op_user=user_obj,
+            #     op_name='登录',
+            #     ext={'file_name': ''}
+            # )
         except:
             self.resp_dict['status_code'] = 50001
             self.resp_dict['msg'] = '身份识别信息出错,请重新登陆'
