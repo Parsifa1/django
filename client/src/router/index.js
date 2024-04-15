@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import store from "@/store";
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.VITE_BASE_PATH),
+    hash: createWebHistory(import.meta.env.VITE_BASE_PATH),
     routes: [
         {
             path: "/",
@@ -78,7 +78,7 @@ const router = createRouter({
                 //     component: () => import("@/views/FileManage/index.vue"),
                 // },
                 {
-                    path: "/history",
+                    path: "/api/history",
                     name: "History",
                     meta: { title: "查询统计" },
                     component: () => import("@/views/History/index.vue"),
