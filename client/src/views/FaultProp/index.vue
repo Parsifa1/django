@@ -14,7 +14,7 @@
       <div class="scrollable-container">
         <div class="content">
           <div class="item" v-for="(item,index) in FileList.slice((currentPage-1)*pageSize,currentPage*pageSize)" :key="index" @click="showCallGraph(item)">
-           <img :src="item.image" alt="">
+           <img src="../../assets/python.png " alt="">
            <div class="text">{{ item.file }}</div>
           </div>
         </div>
