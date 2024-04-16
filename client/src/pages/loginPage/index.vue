@@ -8,7 +8,7 @@
       <div class="form-box">
         <!-- 注册 -->
         <div class="register-box hidden">
-          <h1>register</h1>
+          <h1 style="color:white ; font-size:25px">注册</h1>
           <input type="text" v-model="registerForm.username" placeholder="用户名"/>
           <input type="text" v-model="registerForm.nickname" placeholder="昵称"/>
           <input type="password" v-model="registerForm.password" placeholder="密码"/>
@@ -17,7 +17,7 @@
         </div>
         <!-- 登录 -->
         <div class="login-box">
-          <h1>login</h1>
+          <h1 style="color:white ; font-size:25px">登录</h1>
           <form
               style="width: 100%;padding:0 0 ;display: flex;flex-wrap: wrap;align-items: center;justify-content: center;">
             <input style="width: 80%;" v-model="LoginForm.username" type="text" placeholder="用户名"/>
@@ -39,10 +39,10 @@
           </div>
         </div>
       </div>
-      <div class="con-box left">
-        <h2>
-          <div>欢迎来到</div>
-          <span>软件故障预测与定位系统</span></h2>
+      <div class="con-box left" style="top">
+        <h2><div>欢迎来到</div>
+          <span class="titi">基于深度学习的</span></h2>
+          <span class="tit">软件故障预测与定位系统</span>
         <p>快来试试<span>代码分析</span>吧</p>
         <img src="../../assets/login_2.jpg" alt=""/>
         <p>已有账号</p>
@@ -51,7 +51,8 @@
       <div class="con-box right">
         <h2>
           <div>欢迎来到</div>
-          <span>软件故障预测与定位系统</span></h2>
+          <span class="titi">基于深度学习的</span></h2>
+          <span class="tit">软件故障预测与定位系统</span>
         <p>快来试试<span>代码分析</span>吧</p>
         <img src="../../assets/login_2.jpg" alt=""/>
         <p>没有账号？</p>
@@ -212,7 +213,7 @@ body #app {
   background-color: #fff;
   //background-color: #a0cfff;
   width: 650px;
-  height: 415px;
+  height: 450px;
   border-radius: 5px;
   /* 阴影 */
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
@@ -228,7 +229,7 @@ body #app {
   //background-color: #d3b7d8;
   background-color: #4877ee;
   width: 320px;
-  height: 500px;
+  height: 530px;
   border-radius: 5px;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -354,7 +355,7 @@ input:focus::placeholder {
 
 .con-box span {
   //color: #d3b7d8;
-  color: #4877ee;
+  color: #1d4fd2;
 }
 
 .con-box img {
@@ -365,6 +366,7 @@ input:focus::placeholder {
 }
 
 .con-box button {
+  font-size: 20px;
   margin-top: 3%;
   background-color: #fff;
   //color: #a262ad;
@@ -378,9 +380,26 @@ input:focus::placeholder {
   cursor: pointer;
 }
 
+.con-box left h2 span {
+  color: #1d4fd2;
+  font-size: 30px;
+}
+
+.titi {
+  color: #a0cfff;
+  font-size:20px ;
+  font-weight: 400;
+}
+.tit {
+  color: #1d4fd2;
+  font-size: 25px;
+  font-weight: 700;
+}
+
 .con-box button:hover {
   //background-color: #d3b7d8;
   color: #fff;
+  transition: all .5s;
   background-color: #4877ee;
 }
 

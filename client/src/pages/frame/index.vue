@@ -2,7 +2,8 @@
     <div class="common-layout">
         <el-container>
             <el-header class="header-container">
-                <h2 @click="titleClickBtn">基于深度学习的故障预测与定位系统</h2>
+                <span><img src="../../assets/login_3.png" width="40px" height="40px"></span>
+                <h2 @click="titleClickBtn" >基于深度学习的软件故障预测与定位系统</h2>
                 <div class="item">
                     <div class="help">
                         <el-dropdown>
@@ -27,7 +28,6 @@
                     <el-avatar
                         src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
                     />
-
                     <el-dropdown @command="handleCommand">
                         <span>
                             {{ username }}，您好
@@ -333,16 +333,26 @@ const downloadDocument = async () => {
     transform: translateY(-4px); /* 向上平移2像素 */
     transform: translateX(4px);
 }
+.header-container h2 {
+   font-size:20px;
+   display:inline-block;
+   width: 400px;
+}
 
   .el-header {
             //background: url("@/assets/banner.png") no-repeat center;
             background-color: #1d4fd2;
+            position: relative;
+            height: 70px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             h2 {
+               position: absolute;
                 margin: 20px 0;
                 color: white;
+                left: 80px;
+                font-size: 22px;
             }
             .item {
                 display: flex;
@@ -387,6 +397,10 @@ const downloadDocument = async () => {
                     height:57px
                 }
             }
+        }
+
+        .header-container h2 {
+          display: inline-block;
         }
         .el-main {
             min-height: 90vh;
