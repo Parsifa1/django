@@ -1,3 +1,4 @@
+import openpyxl
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -6,11 +7,26 @@ import numpy as np
 import os
 # 加载数据
 def delete_excel_file(file_path):
+    # try:
+    #     # 获取当前文件所在的目录路径
+    #     # 检查文件是否存在，如果存在则删除
+    #     if os.path.exists(file_path):
+    #         os.remove(file_path)
+    # except Exception as e:
+    #     print(f"删除文件时出错: {e}")
     try:
-        # 获取当前文件所在的目录路径
-        # 检查文件是否存在，如果存在则删除
-        if os.path.exists(file_path):
-            os.remove(file_path)
+        # 打开 Excel 文件
+        wb = openpyxl.load_workbook(file_path)
+
+        # 获取第一个工作表
+        ws = wb.active
+
+        # 删除第二行及其后的所有行
+        ws.delete_rows(2, ws.max_row)
+
+        # 保存修改
+        wb.save(file_path)
+
     except Exception as e:
         print(f"删除文件时出错: {e}")
 def go():
@@ -86,8 +102,6 @@ def go():
             predicted_data['label'] = predicted.numpy()
 
             predicted_data.to_excel('./predicted_data.xlsx')
-
-
 
             # 将名称添加到相应的键中
             for index, row in predicted_data.iterrows():
