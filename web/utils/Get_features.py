@@ -455,6 +455,7 @@ def save_features_to_excel(features, filename):
 
     except:
         # 如果文件不存在，则创建一个新的工作簿和工作表
+
         workbook = openpyxl.Workbook()
         sheet = workbook.active
         # 写入特征标题行
@@ -477,6 +478,8 @@ def save_features_to_excel(features, filename):
             row.append(features[key])
     sheet.append(row)
     # 保存工作簿到文件
+    file_path = "/home/parsifa1/Documents/django/web/Analyze.xlsx"
+    workbook.save(file_path)
     workbook.save(filename)
 
 if __name__ == '__main__':
